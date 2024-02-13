@@ -1,0 +1,38 @@
+<DOC TYPE html>
+<html lang="en">
+<title>Sprinkler Storage Checker</title>
+        <meta name="description" content="An interactive tool to check storage permissions based on ceiling height, k factor, and pressure of the sprinkler system.">
+        <meta name="keywords" content="sprinkler, storage, checker, ceiling height, k factor, pressure">
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    
+	<link rel="canonical" href="https://calculator.tools/app/sprinkler-storage-checker-1348/">
+	<meta charset="utf-8">
+
+</head>
+    <body>
+        <div class="container mt-5">
+            <h2>Sprinkler Storage Checker</h2>
+            <form id="storage-check-form">
+                <div class="form-group">
+                    <label for="ceiling-height">Actual Ceiling Height (ft):</label>
+                    <input type="number" class="form-control" id="ceiling-height" required>
+                </div>
+                <div class="form-group">
+                    <label for="k-factor">K Factor of the Sprinkler:</label>
+                    <input type="number" step="0.1" class="form-control" id="k-factor" required>
+                </div>
+                <div class="form-group">
+                    <label for="pressure">Operating Pressure of the Pendent Sprinkler (psi):</label>
+                    <input type="number" step="0.1" class="form-control" id="pressure" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Check Storage Permission</button>
+            </form>
+            <div id="result" class="mt-3"></div>
+        </div>
+            <script type="text/javascript"> var localStoragePrefix = "ct-1348"; var lastSave = 0; function saveLocal(data) { if (Date.now() - lastSave < 1000) { return; } let cookie = localStoragePrefix + "=" + JSON.stringify(data) + "; path=" + window.location.pathname +  "'; SameSite=Strict"; cookie += "; expires=" + new Date(Date.now() + 1000 * 60 * 60 * 24 * 365 * 1000).toUTCString(); document.cookie = cookie; lastSave = Date.now(); } function loadLocal() { var cookiePrefix = localStoragePrefix + "="; var cookieStart = document.cookie.indexOf(cookiePrefix); if (cookieStart > -1) { let cookieEnd = document.cookie.indexOf(";", cookieStart); if (cookieEnd == -1) { cookieEnd = document.cookie.length; } var cookieData = document.cookie.substring(cookieStart + cookiePrefix.length, cookieEnd); return JSON.parse(cookieData); } } </script>
+        <script type="text/javascript"> window.addEventListener('load', function() { var observer = new MutationObserver(function() { window.parent.postMessage({height: document.documentElement.scrollHeight || document.body.scrollHeight},"*"); }); observer.observe(document.body, {attributes: true, childList: true, subtree: true}); window.parent.postMessage({height: document.documentElement.scrollHeight || document.body.scrollHeight},"*"); }); </script>
+</body>
+</html>
